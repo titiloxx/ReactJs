@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View, Text, AsyncStorage, TouchableOpacity} from 'react-native';
+import { Platform, View, Text, AsyncStorage} from 'react-native';
 import styles from './Estilos/Estilos';
 import Cargados from './2';
 import Agregar from './3';

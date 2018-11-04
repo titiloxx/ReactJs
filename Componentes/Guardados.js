@@ -13,7 +13,7 @@ export default class Numero extends React.Component {
                 <TouchableOpacity onPress={this.props.CargarNumeros}>  
                 <Text>{this.props.date}</Text>
                 <View style={[styles.agregarBordes]}>
-                    <Text style={styles.title}>{this.props.lista.reduce(this.sumar)}</Text>
+                        <Text style={styles.numeroTotal}>{this.props.lista.reduce(this.sumar)}</Text>
                 </View>
                 </TouchableOpacity> 
             </View>

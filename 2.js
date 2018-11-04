@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Estilos/Estilos';
 import Guardados from './Componentes/Guardados';
-import { Text, View, Button, TouchableOpacity, redux } from 'react-native';
+import {Text, View, Button, TouchableOpacity, redux } from 'react-native';
 
 
 export default class Cargados extends React.Component {

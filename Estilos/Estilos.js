@@ -1,16 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
+const color = Platform.OS === "android" ? '#74c36d' :'skyblue';
+const align = Platform.OS === "android" ? 'flex-end' : 'center';
 export default StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'skyblue',
+        backgroundColor: color,
         justifyContent: 'space-around'
     },
     title: {
         fontSize: 40,
-        backgroundColor: 'skyblue',
+        backgroundColor: color,
         alignSelf: 'center'
+    },
+    numeroTotal: {
+        fontSize: 40,
+        backgroundColor: color,
+        alignSelf: align
     },
     texto: {
         fontSize: 20,
