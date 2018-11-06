@@ -2,12 +2,24 @@ import { createStore } from "redux";
 
 const reducer = (state, action) => {
 
-    if (action.type === "CARGAR_LISTA") {
+    if (action.type === "CARGAR_LISTA_ENTERA") {
+        return {
+            ...state,
+            lista: action.estadoActual
+        };
+    }
+    else if (action.type === "CARGAR_LISTA") {
         return {
             ...state,
             lista: state.lista.concat(action.estadoActual)
         };
     }
+    else if (action.type === "BORRAR_TODOS_GUARDADOS") {
+        return {
+            ...state,
+            lista: []
+        };
+    } //Borra los numeros actuales
     else if (action.type === "BORRAR_NUMEROS") {
         return {
             ...state,

@@ -50,25 +50,36 @@ class Main extends React.Component {
 
 
    cargarDatos() {
-        {/*AsyncStorage.removeItem('items');*/}
+       {/*AsyncStorage.removeItem('items');*/ }
        AsyncStorage.getItem('items').then((value) => {
             if (value !== null) {
                 var parseado = JSON.parse(value);
                 this.setState({
                     lista: parseado
                 });
-            }
-        });
+                store.dispatch({
+                    type: "CARGAR_LISTA_ENTERA",
+                    estadoActual: parseado
+                });
+           }
+     
+       });
+
     }
 
-    guardar() {
+    guardar() {//
         AsyncStorage.setItem('items', JSON.stringify(store.getState().lista));
     }//Guarda los datos
 
+    eliminarTodo() {
+        store.dispatch({
+            type: "BORRAR_TODOS_GUARDADOS"
+        });
+    }//Elimina todos los elementos guardados
     render() {
         return (
             <View style={styles.container}>
-                <Cargados lista={this.state.lista} CargarNumeros={this.irAgregarScreen.bind(this)} function={this.agregar.bind(this)} />
+                <Cargados lista={this.state.lista} eliminarTodo={this.eliminarTodo.bind(this)} CargarNumeros={this.irAgregarScreen.bind(this)} function={this.agregar.bind(this)} />
             </View>
         );
     }

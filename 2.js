@@ -27,6 +27,7 @@ export default class Cargados extends React.Component {
                 <Text style={styles.title}>Total</Text>
                 {this.cargarGuardados()}
                 <View style={styles.botonAgregarView}>
+                    <Button title="Eliminar todo" style={styles.botonAgregar} color="#b23200" onPress={this.props.eliminarTodo} />
                     <Button title="Agregar" style={styles.botonAgregar} onPress={this.props.function} />
                 </View>
             </View>

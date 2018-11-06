@@ -25,7 +25,9 @@ export default StyleSheet.create({
     },
     botonAgregarView: {
         width: 300,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     },
     botonAgregar: {
          height:100
